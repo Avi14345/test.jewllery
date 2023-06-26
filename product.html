@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Page</title>
+  <style>
+  
+  </style>
+</head>
+<body>
+  <div class="product-container">
+    <img src="" alt="Product Image" id="product-image">
+    <h2 id="product-title"></h2>
+    <p id="product-description"></p>
+  </div>
+
+  <script>
+    // Retrieve the selected product from the query parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const selectedProduct = urlParams.get('product');
+    
+    // Define the product details based on the selected product
+    let productImage = '';
+    let productTitle = '';
+    let productDescription = '';
+
+    if (selectedProduct === 'product1') {
+      productImage = 'path/to/product1-image.jpg';
+      productTitle = 'Product 1';
+      productDescription = 'This is the description for Product 1.in this their is section';
+    } else if (selectedProduct === 'product2') {
+      productImage = 'path/to/product2-image.jpg';
+      productTitle = 'Product 2';
+      productDescription = 'This is the description for Product 2.';
+    } else if (selectedProduct === 'produ-ct3') {
+      productImage = 'path/to/product3-image.jpg';
+      productTitle = 'Product 3';
+      productDescription = 'This is the description for Product 3.';
+    }
+
+    // Set the product details in the HTML elements
+    document.getElementById('product-image').src = productImage;
+    document.getElementById('product-title').textContent = productTitle;
+    document.getElementById('product-description').textContent = productDescription;
+  </script>
+</body>
+</html>
